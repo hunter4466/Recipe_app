@@ -1,0 +1,25 @@
+@mixin flexbox ($direction){
+display: flex;
+flex-direction: $direction;
+}
+
+
+@mixin simpleFrame ($width, $height) {
+width: $width;
+height: $height;
+border-style: solid;
+border-color: black;
+border-width: 1px;
+}
+
+@mixin innerAlign ($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin centerHor ($width) {
+    position: relative;
+    width: $width;
+    margin-left: -($width/2);
+    left: 50vw;
+}

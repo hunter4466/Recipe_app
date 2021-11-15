@@ -1,0 +1,36 @@
+@import './modules/frames.scss';
+@import './modules/buttons.scss';
+@import './fonts.scss';
+
+.add_comment_main_container {
+    @include flexbox(column);
+    @include centerHor(300px);
+    
+}
+
+.add_comment_form {
+    @include simpleFrame(250px, fit-content);
+    @include flexbox(column);
+    padding: 30px;
+}
+
+.add_comment_head_title {
+    @include customFont('lato1', 30px);
+    text-align: center;
+}
+
+.add_comment_form_label {
+    @include customFont('lato1', 15px);
+    margin-bottom: 20px;
+    height:30px;
+}
+
+.add_comment_form_input {
+    margin-bottom: 20px;
+    height:30px;
+}
+
+.add_comment_form_btn {
+    margin-bottom: 20px;
+    height:30px;
+}

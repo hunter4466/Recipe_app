@@ -1,0 +1,55 @@
+  @font-face {
+    font-family: 'Lato1';
+    src: url('./fonts/Lato-Black.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Lato2';
+    src: url('./fonts/Lato-BlackItalic.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Lato3';
+    src: url('./fonts/Lato-Bold.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Lato4';
+    src: url('./fonts/Lato-BoldItalic.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Lato5';
+    src: url('./fonts/Lato-Italic.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Lato6';
+    src: url('./fonts/Lato-Light.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Lato7';
+    src: url('./fonts/Lato-LightItalic.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Lato8';
+    src: url('./fonts/Lato-Regular.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Lato9';
+    src: url('./fonts/Lato-Thin.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Lato10';
+    src: url('./fonts/Lato-ThinItalic.ttf');
+  }
+  
+  @mixin customFont ($font, $fontsize) {
+    font-family: $font, serif;
+    font-size: $fontsize;
+  }
+  

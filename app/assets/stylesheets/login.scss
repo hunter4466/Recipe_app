@@ -1,0 +1,14 @@
+@import './modules/frames.scss';
+@import './modules/buttons.scss';
+@import './fonts.scss';
+
+.login_main_container {
+    @include flexbox(column);
+    @include centerHor(420px);
+    @include simpleFrame(300px, fit-content);
+    padding: 20px;
+}
+
+.login_header {
+    margin-bottom: 10px;
+}
