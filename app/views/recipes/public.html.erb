@@ -1,0 +1,18 @@
+<div>
+  <div>
+    <h1>PUBLIC RECIPES:</h1>
+    <div>
+    <% @recipes.each do |recipe|%>
+      <% if recipe.public %>
+        <h2><%= recipe.name %></h2>
+        <h2>by <%= User.find(recipe.user_id).name %></h2>
+        <p>Total food items:<%= RecipeFood.where("recipe_id = #{recipe.id}").count %></p>
+        <p>Total price:</p>
+        <%= RecipeFood.where("recipe_id = #{recipe.id}").joins(:food).sum("quantity * price") %>
+        <p><%= recipe.description %></p>
+        <%= button_to "Remove", user_destroy_recipe_path(id: recipe.id), method: :delete, class: 'delete-btn'  %>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>
