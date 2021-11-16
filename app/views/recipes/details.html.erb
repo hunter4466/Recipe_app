@@ -10,12 +10,12 @@
         <p>ID: <%= @recipe.id %> DELETE THIS</p>
         <p>Public: <%= @recipe.public %></p>
         <%= button_to "Remove", user_destroy_recipe_path(id: @recipe.id), method: :delete, class: 'delete-btn'  %>
-        <% @foods.each do |food|%>
+        <% @recipe_foods.each do |recipe_food|%>
           <li>
-            <h2><%= food.name %></h2>
-            <h2><%= food.measurement_unit %></h2>
-            <h2><%= food.price %></h2>
-            <%= button_to "Remove", user_destroy_food_path(id: food.id), method: :delete, class: 'delete-btn'  %>
+            <h2><%= recipe_food.food.name %></h2>
+            <h2><%= recipe_food.food.measurement_unit %></h2>
+            <h2><%= recipe_food.food.price %></h2>
+            <%= button_to "Remove", user_destroy_food_path(id: recipe_food.id), method: :delete, class: 'delete-btn'  %>
           </li>
       <% end %>
     </div>
