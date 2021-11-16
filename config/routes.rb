@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'foods/show', to: "foods#show", as: "foods_show"
+  get 'foods/shop', to: "foods#shop", as: "foods_shop"
   get 'foods/new', to: "foods#new", as: "foods_new"
   get 'recipes/new', to: "recipes#new", as: "recipes_new"
   get 'recipes/show', to:  "recipes#show", as: "recipes_show"

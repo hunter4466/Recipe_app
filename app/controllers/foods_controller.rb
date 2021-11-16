@@ -9,6 +9,10 @@ class FoodsController < ApplicationController
     @user = current_user.id
   end
 
+  def shop
+    @foods = Food.where(user_id: current_user.id)
+  end
+
   def create
     @food = Food.new
     @food.name = params[:food][:name]

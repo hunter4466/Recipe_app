@@ -4,7 +4,7 @@
     <div>
     <% @recipes.each do |recipe|%>
       <% if recipe.user_id == @user %>
-        <h2><%= recipe.name %></h2>
+      <%= link_to recipe.name, user_recipe_details_path(user_id: @user, id: recipe.id), class: 'link-to-recipe-detail' %>
         <p><%= recipe.description %></p>
         <%= button_to "Remove", user_destroy_recipe_path(id: recipe.id), method: :delete, class: 'delete-btn'  %>
       <% end %>
