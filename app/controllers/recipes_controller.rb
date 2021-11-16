@@ -11,9 +11,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     if @recipe.destroy
       # Post.update_post_counter(User.find(current_user.id))
-      flash[:notice] = 'Post deleted succesfully'
+      flash[:notice] = 'Recipe deleted succesfully'
     else
-      flash[:error] = 'Post not deleted'
+      flash[:error] = 'Recipe not deleted'
     end
     redirect_to recipes_show_url()
   end

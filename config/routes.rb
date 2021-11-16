@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  get 'foods/show', to: "foods#show", as: "foods_show"
+  get 'foods/new', to: "foods#new", as: "foods_new"
   get 'recipes/new'
   get 'recipes/show', to:  "recipes#show", as: "recipes_show"
+  delete "/users/foods/:id", to: "foods#destroy", as: "user_destroy_food"
   delete "/users/recipes/:id", to: "recipes#destroy", as: "user_destroy_recipe"
   devise_for :users
   root to: "recipes#show"

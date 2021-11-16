@@ -1,0 +1,23 @@
+<section>
+  
+  <div>
+    <ul>
+      <li>
+        <h1>Food</h1>
+        <h1>Measurement unit</h1>
+        <h1>Unit price</h1>
+        <h1>Actions</h1>
+      </li>
+      <% @foods.each do |food|%>
+        <% if food.user_id == @user %>
+          <li>
+            <h2><%= food.name %></h2>
+            <h2><%= food.measurement_unit %></h2>
+            <h2><%= food.price %></h2>
+            <%= button_to "Remove", user_destroy_food_path(id: food.id), method: :delete, class: 'delete-btn'  %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</section>
