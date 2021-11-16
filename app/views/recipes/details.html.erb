@@ -1,0 +1,23 @@
+<div>
+  <div>
+    <h1>RECIPE DETAILS:</h1>
+    <div>
+    
+        <h2><%= @recipe.name %></h2>
+        <p>Preparation Time: <%= @recipe.preparation_time %></p>
+        <p>Cooking Time: <%= @recipe.cooking_time %></p>
+        <p><%= @recipe.description %></p>
+        <p>ID: <%= @recipe.id %> DELETE THIS</p>
+        <p>Public: <%= @recipe.public %></p>
+        <%= button_to "Remove", user_destroy_recipe_path(id: @recipe.id), method: :delete, class: 'delete-btn'  %>
+        <% @foods.each do |food|%>
+          <li>
+            <h2><%= food.name %></h2>
+            <h2><%= food.measurement_unit %></h2>
+            <h2><%= food.price %></h2>
+            <%= button_to "Remove", user_destroy_food_path(id: food.id), method: :delete, class: 'delete-btn'  %>
+          </li>
+      <% end %>
+    </div>
+  </div>
+</div>

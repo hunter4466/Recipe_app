@@ -5,6 +5,16 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
+  def details
+    @user = User.find(params[:user_id])
+    @foods = Food.where("user_id = #{params[:user_id]}")
+    @recipe = Recipe.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json { render json: @comments }
+    end
+  end
+
   def new
     @recipe = Recipe.new
     @user = current_user.id
