@@ -5,6 +5,22 @@ class FoodsController < ApplicationController
   end
 
   def new
+    @food = Food.new
+    @user = current_user.id
+  end
+
+  def create
+    @food = Food.new
+    @food.name = params[:food][:name]
+    @food.measurement_unit = params[:food][:measurement_unit]
+    @food.price = params[:food][:price]
+    @food.user_id = params[:user_id]
+    if @food.save
+      redirect_to foods_show_url()
+    else
+      flash.now[:error] = 'To-do item update failed'
+      render :new
+    end
   end
 
   def destroy

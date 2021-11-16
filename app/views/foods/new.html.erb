@@ -1,2 +1,12 @@
-<h1>Food#new</h1>
-<p>Find me in app/views/food/new.html.erb</p>
+<section class="post_new_main_container">
+  <%= form_with model: @food, url: user_create_food_path(user_id: @user), method: :post, class: 'post_new_form' do |form| %>
+    <h2 class="post_new_add_post_indicator">Add Food: </h2>
+      <%= form.label :name, class: 'post_new_title_label' %>
+      <%= form.text_field :name, :required => true, class: 'post_new_title_input' %>
+      <%= form.label :measurement_unit, class: 'post_new_title_label' %>
+      <%= form.text_field :measurement_unit, :required => true, class: 'post_new_title_input' %>
+      <%= form.label :price, class: 'post_new_title_label' %>
+      <%= form.text_field :price, :required => true, class: 'post_new_title_input' %>
+      <%= form.submit "Add Food", class: 'post_new_submit_btn' %>
+  <% end %>
+</section>
