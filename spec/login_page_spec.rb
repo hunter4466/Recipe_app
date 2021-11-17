@@ -9,7 +9,7 @@ RSpec.describe 'Login page', js: true, type: :system do
   end
 
   describe 'contains' do
-    it 'username and password inputs, and Log in button' do
+    it 'Username and password inputs, and Log in button' do
       visit new_user_session_path
       expect(page).to have_field('email')
       expect(page).to have_field('password')
