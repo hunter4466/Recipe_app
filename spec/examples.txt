@@ -1,21 +1,21 @@
-example_id                                    | status | run_time        |
---------------------------------------------- | ------ | --------------- |
-./spec/food_page_spec.rb[1:1:1]               | passed | 0.87308 seconds |
-./spec/food_page_spec.rb[1:1:2]               | passed | 0.89154 seconds |
-./spec/food_page_spec.rb[1:1:3]               | passed | 0.90759 seconds |
-./spec/food_page_spec.rb[1:1:4]               | passed | 0.78624 seconds |
-./spec/food_page_spec.rb[1:1:5]               | passed | 0.86979 seconds |
-./spec/food_page_spec.rb[1:2:1]               | passed | 0.95319 seconds |
-./spec/login_page_spec.rb[1:1:1]              | passed | 0.32713 seconds |
-./spec/login_page_spec.rb[1:2:1]              | passed | 0.43915 seconds |
-./spec/login_page_spec.rb[1:2:2]              | passed | 0.62913 seconds |
-./spec/login_page_spec.rb[1:2:3]              | passed | 0.70039 seconds |
-./spec/user_recipes_index_page_spec.rb[1:1:1] | passed | 0.96578 seconds |
-./spec/user_recipes_index_page_spec.rb[1:1:2] | passed | 9.9 seconds     |
-./spec/user_recipes_index_page_spec.rb[1:1:3] | passed | 1.05 seconds    |
-./spec/user_recipes_index_page_spec.rb[1:1:4] | passed | 1.03 seconds    |
-./spec/user_recipes_index_page_spec.rb[1:1:5] | passed | 1 second        |
-./spec/user_recipes_index_page_spec.rb[1:1:6] | passed | 0.9342 seconds  |
-./spec/user_recipes_index_page_spec.rb[1:1:7] | passed | 1.04 seconds    |
-./spec/user_recipes_index_page_spec.rb[1:1:8] | passed | 1.09 seconds    |
-./spec/user_recipes_index_page_spec.rb[1:2:1] | passed | 1.21 seconds    |
+example_id                         | status | run_time        |
+---------------------------------- | ------ | --------------- |
+./spec/food_page_spec.rb[1:1:1]    | passed | 0.90707 seconds |
+./spec/food_page_spec.rb[1:1:2]    | passed | 0.87441 seconds |
+./spec/food_page_spec.rb[1:1:3]    | passed | 1 second        |
+./spec/food_page_spec.rb[1:1:4]    | passed | 0.8984 seconds  |
+./spec/food_page_spec.rb[1:1:5]    | passed | 0.87618 seconds |
+./spec/food_page_spec.rb[1:2:1]    | passed | 1.2 seconds     |
+./spec/login_page_spec.rb[1:1:1]   | passed | 9.14 seconds    |
+./spec/login_page_spec.rb[1:2:1]   | passed | 1.14 seconds    |
+./spec/login_page_spec.rb[1:2:2]   | passed | 0.98449 seconds |
+./spec/login_page_spec.rb[1:2:3]   | passed | 1.81 seconds    |
+./spec/recipes_page_spec.rb[1:1:1] | passed | 1.13 seconds    |
+./spec/recipes_page_spec.rb[1:1:2] | passed | 0.84915 seconds |
+./spec/recipes_page_spec.rb[1:1:3] | passed | 0.90418 seconds |
+./spec/recipes_page_spec.rb[1:1:4] | passed | 0.97542 seconds |
+./spec/recipes_page_spec.rb[1:1:5] | passed | 0.88503 seconds |
+./spec/recipes_page_spec.rb[1:1:6] | passed | 1.31 seconds    |
+./spec/recipes_page_spec.rb[1:1:7] | passed | 1.07 seconds    |
+./spec/recipes_page_spec.rb[1:1:8] | passed | 0.90597 seconds |
+./spec/recipes_page_spec.rb[1:2:1] | passed | 1.23 seconds    |

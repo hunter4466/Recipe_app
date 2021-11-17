@@ -22,6 +22,7 @@ class RecipesController < ApplicationController
     @recipefood.food_id = params[:recipe_food][:food_id]
     @recipefood.recipe_id = params[:id]
     if @recipefood.save
+      flash[:notice] = 'Success'
     else
       flash.now[:error] = 'Ingredient could not be added'
     end

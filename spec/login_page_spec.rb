@@ -3,9 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Login page', js: true, type: :system do
   before(:all) do
     user1 = User.create({ name: 'Foo', email: 'user1@mail.com', password: '111111', confirmed_at: '2021-01-01' })
-    user2 = User.create({ name: 'Bar', email: 'user2@mail.com', password: '111111', confirmed_at: '2021-01-01' })
-    recipe1 = Recipe.create({ name: 'Sandwich', preparation_time: '1h', cooking_time: '2h', description: 'Make a Sandwich', user_id: user1.id })
-    recipe2 = Recipe.create({ name: 'Burger', preparation_time: '1h', cooking_time: '2h', description: 'Make a Burger', user_id: user1.id })
+    Recipe.create({ name: 'Sandwich', preparation_time: '1h', cooking_time: '2h', description: 'Make a Sandwich', user_id: user1.id })
   end
 
   describe 'contains' do
