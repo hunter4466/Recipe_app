@@ -12,7 +12,7 @@
         <% if current_user.id == @recipe.user_id %>
         <div>
           <%= form_with model: @recipefood, url: add_food_recipe_path(user_id: @user.id, id: @recipe.id), method: :post, class: 'create_new_food_recipe' do |form| %> 
-            <%= form.select(:food_id, Food.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }) %> 
+            <%= form.select(:food_id, Food.where("user_id = #{@user.id}").collect {|p| [ p.name, p.id ] }, { include_blank: true }) %> 
             <%= form.label :quantity, class: 'post_new_title_label' %>
             <%= form.number_field :quantity, in: 1.0..20.0, step: 1, :required => true, class: 'price_input'  %>
             <%= form.submit "Add Ingredient", class: 'post_new_submit_btn' %>
