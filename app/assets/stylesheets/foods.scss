@@ -70,8 +70,7 @@
 }
 .add_food_btn {
     text-decoration: none;
-    margin-left: 1000px;
-    height: 120px;
+    @include centerHor(120px);
     border-style: solid;
     border-color: rgb(43, 89, 150);
     border-width: 1px;

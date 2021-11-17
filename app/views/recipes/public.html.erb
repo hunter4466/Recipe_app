@@ -3,8 +3,8 @@
     <h1 class="recipes_public_title">PUBLIC RECIPES:</h1>
     <div class="recipes_public_container">
     <% @recipes.each do |recipe|%>
-    <div class="single_recipe_public_container">
       <% if recipe.public %>
+      <div class="single_recipe_public_container">
         <div>
           <%= link_to recipe.name, user_recipe_details_path(user_id: recipe.user_id, id: recipe.id), class: 'link-to-recipe-detail' %>
           <h2 class='link-to-recipe-user-name'>by <%= User.find(recipe.user_id).name %></h2>
@@ -13,8 +13,8 @@
           <p class="recipe_public_detail">Total food items: <%= RecipeFood.where("recipe_id = #{recipe.id}").count %></p>
           <p class="recipe_public_detail">Total price: $ <%= RecipeFood.where("recipe_id = #{recipe.id}").joins(:food).sum("quantity * price") %></p>
         </div>
+        </div>
       <% end %>
-    </div>
     <% end %>
     </div>
   </div>
