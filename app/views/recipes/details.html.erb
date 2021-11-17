@@ -1,0 +1,42 @@
+  <div>
+    <div class="details_main_container">
+      <div class="recipe_details_container">
+        <h2 class="recipe_title"><%= @recipe.name %></h2>
+        <p class="recipe_detail">Preparation Time: <%= @recipe.preparation_time %></p>
+        <p class="recipe_detail">Cooking Time: <%= @recipe.cooking_time %></p>
+        <p class="recipe_detail"><%= @recipe.description %></p>
+        <% if current_user.id == @recipe.user_id %>
+            <% if @recipe.public %>
+              <%= button_to "Make Private", user_recipe_update_public_path(id: @recipe.id), method: :post, class: 'make_publi_btn'  %>
+            <% else %>
+              <%= button_to "Make Public", user_recipe_update_public_path(id: @recipe.id), method: :post, class: 'make_publi_btn'  %>
+            <% end %>
+          <div class="footer_btns">
+          <%= button_to "Generate shopping list", foods_shop_path(), method: :get, class: 'generate_shop_btn'  %>
+            <%= form_with model: @recipefood, url: add_food_recipe_path(user_id: @user.id, id: @recipe.id), method: :post, class: 'create_new_food_recipe' do |form| %> 
+              <%= form.label :food_id, class: 'form_label' %>
+              <%= form.select(:food_id, Food.where("user_id = #{@user.id}").collect {|p| [ p.name, p.id ] }, { include_blank: true }) %> 
+              <%= form.label :quantity, class: 'form_label_two' %>
+              <%= form.number_field :quantity, in: 1.0..20.0, step: 1, :required => true, class: 'price_input'  %>
+              <%= form.submit "Add Ingredient", class: 'add_ing_btn' %>
+            <% end %>
+          </div>
+        <% end %>
+        <div class="separator"></div>
+        <ul class="food-show-container">
+            <li class="first-line">Food</li>
+            <li class="first-line">Quantity</li>
+            <li class="first-line">Value</li>
+            <li class="first-line">Actions</li>
+        <% @recipe_foods.each do |recipe_food|%>      
+            <li class="next-line"><%= recipe_food.food.name %></li>
+            <li class="next-line"><%= recipe_food.food.measurement_unit %></li>
+            <li class="next-line"><%= recipe_food.food.price %></li>
+            <% if current_user.id == @recipe.user_id %>
+            <%= button_to "Remove", user_destroy_food_path(id: recipe_food.id), method: :delete, class: 'next-line-btn'  %>
+            <% end %>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>

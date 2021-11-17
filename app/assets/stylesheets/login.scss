@@ -1,0 +1,15 @@
+@import './modules/frames.scss';
+@import './modules/buttons.scss';
+@import './fonts.scss';
+
+.new_user {
+    @include flexbox(column);
+}
+
+.login_title {
+    @include customFont(Lato1,20px)
+}
+
+.remember_me_btn {
+    @include customFont(Lato1,15px)
+}

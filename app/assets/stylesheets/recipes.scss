@@ -1,0 +1,139 @@
+@import './modules/frames.scss';
+@import './modules/buttons.scss';
+@import './fonts.scss';
+
+// ----------------- RECIPES DETAILS ------------------
+.details_main_container {
+    @include centerHor(900px);
+}
+.recipe_details_container {
+    @include basicFrame(1px);
+    @include centerHor(900px);
+}
+.recipe_title {
+    @include centerHor(120px);
+    @include customFont(Lato1, 30px);
+}
+.recipe_detail {
+    width: 100%;
+    @include customFont(Lato3, 20px);
+    margin-left: 60px;
+}
+.separator {
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.6);
+    border-bottom-width: 1px;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+.make_publi_btn {
+    position: absolute;
+    width: 140px;
+    margin-left: -60px;
+    left: 80%;
+    top: 80px;
+    align-items: center;
+    @include simpleBtn(30px);
+}
+.footer_btns {
+    @include flexbox(row);
+    margin-left: 7%;
+    width: 86%;
+}
+.create_new_food_recipe {
+    @include flexbox(row);
+    justify-content: flex-end;
+    width: 80%;
+}
+.generate_shop_btn {
+    @include simpleBtn(30px);
+}
+.add_ing_btn {
+    @include simpleBtn(30px);
+}
+.form_label {
+    margin-left: 20px;
+    margin-right: 20px;
+    @include customFont(Lato3, 15px);
+    padding-top: 5px;
+}
+.form_label_two {
+    margin-left: 20px;
+    margin-right: 20px;
+    @include customFont(Lato3, 15px);
+    border-left-style: solid;
+    border-left-color: rgba(0, 0, 0, 0.6);
+    border-left-width: 1px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.price_input {
+    margin-right: 10px;
+}
+
+// -------------- RECIPES NEW ------------------------
+.recipe_new_main_container {
+    @include centerHor(300px);
+    @include basicFrame(1px);
+    @include flexbox(column)
+}
+
+.recipe_new_form {
+    @include flexbox(column);
+}
+.recipe_new_add_recipe_indicator {
+    @include centerHor(200px);
+    @include customFont(Lato1, 25px);
+}
+.recipe_new_title_label {
+    margin-top: 10px;
+    @include centerHor(200px);
+    @include customFont(Lato3, 15px);
+}
+.recipe_new_title_input {
+    @include customFont(Lato3, 15px);
+    margin-top: 10px;
+    @include centerHor(200px);
+}
+.recipe_new_submit_btn {
+    margin-top: 10px;
+    @include simpleBtn(30px);
+    @include centerHor(200px);
+    margin-bottom: 10px;
+}
+
+// -------------- RECIPES PUBLIC --------------------------
+
+.recipes_public_title {
+    @include centerHor(500px);
+    @include customFont(Lato1, 25px);
+    text-align: center;
+}
+.recipes_public_container {
+    @include centerHor(500px);
+}
+.single_recipe_public_container {
+    @include centerHor(500px);
+    @include basicFrame(1px);
+    margin-bottom: 20px;
+    @include flexbox(row);
+    justify-content: space-around;
+}
+.single_recipe_public_container {
+
+}
+.link-to-recipe-detail {
+    @include customFont(Lato3, 25px);
+    margin-top: 10px;
+    text-decoration: none;
+}
+.link-to-recipe-user-name {
+    @include customFont(Lato3, 20px);
+    margin-top: 10px;
+    text-decoration: none;
+}
+.recipe_public_detail {
+    @include customFont(Lato3, 20px);
+}

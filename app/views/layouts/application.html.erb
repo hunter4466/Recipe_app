@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recipe App</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="navigation-bar">
+    <h1 class="food_app_title">Food App</h1>
+    <%= link_to "My Ingredients", foods_show_path(), class: 'navigation-btn' %>
+    <%= link_to "My recipes", recipes_show_path(), class: 'navigation-btn' %>
+    <%= link_to "Public Recipes", recipes_public_path(), class: 'navigation-btn' %>
+    <%= link_to "Shopping Cart", foods_shop_path(), class: 'navigation-btn' %>
+    </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>
