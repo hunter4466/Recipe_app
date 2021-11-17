@@ -1,8 +1,13 @@
-@mixin simpleBtn ($width, $height) {
+@mixin simpleBtn ($height) {
     height: $height;
-    width: $width;
     border-style: solid;
-    border-color: black;
+    border-color: rgb(43, 89, 150);
     border-width: 1px;
-    background-color: gray;
+    background: rgb(43, 89, 150);
+    color: white;
+    border-radius: 3px;
+    transition: ease-in-out 0.2s;
+    &:hover {
+      transform: scale(1.2)
+    }
 }

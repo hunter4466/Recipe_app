@@ -1,0 +1,31 @@
+@import './modules/frames.scss';
+@import './modules/buttons.scss';
+@import './fonts.scss';
+
+.window_main_container {
+    @include centerHor(200px);
+    @include basicFrame(1px);
+}
+.food_new_form {
+    @include flexbox(column);
+}
+.post_new_add_post_indicator {
+    @include centerHor(120px);
+    @include customFont(Lato1, 25px);
+}
+.post_new_title_label {
+    margin-top: 10px;
+    @include centerHor(120px);
+    @include customFont(Lato3, 15px);
+}
+.post_new_title_input {
+    @include customFont(Lato3, 15px);
+    margin-top: 10px;
+    @include centerHor(120px);
+}
+.post_new_submit_btn {
+    margin-top: 10px;
+    @include simpleBtn(30px);
+    @include centerHor(120px);
+    margin-bottom: 10px;
+}

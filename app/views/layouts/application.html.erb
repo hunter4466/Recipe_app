@@ -12,12 +12,13 @@
   </head>
 
   <body>
-    <div>
+    <div class="navigation-bar">
+    <h1 class="food_app_title">Food App</h1>
     <%= link_to "My Ingredients", foods_show_path(), class: 'navigation-btn' %>
     <%= link_to "My recipes", recipes_show_path(), class: 'navigation-btn' %>
     <%= link_to "Public Recipes", recipes_public_path(), class: 'navigation-btn' %>
     <%= link_to "Shopping Cart", foods_shop_path(), class: 'navigation-btn' %>
-    <div>
+    </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

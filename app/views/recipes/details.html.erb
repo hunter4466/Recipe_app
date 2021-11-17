@@ -7,13 +7,13 @@
         <p>Preparation Time: <%= @recipe.preparation_time %></p>
         <p>Cooking Time: <%= @recipe.cooking_time %></p>
         <p><%= @recipe.description %></p>
-        <p>Public: <%= @recipe.public %></p>
-        <% if @recipe.public %>
-          <%= button_to "Make Private", user_recipe_update_public_path(id: @recipe.id), method: :post, class: 'delete-btn'  %>
-        <% else %>
-          <%= button_to "Make Public", user_recipe_update_public_path(id: @recipe.id), method: :post, class: 'delete-btn'  %>
-        <% end %>
         <% if current_user.id == @recipe.user_id %>
+        <p>Public: <%= @recipe.public %></p>
+          <% if @recipe.public %>
+            <%= button_to "Make Private", user_recipe_update_public_path(id: @recipe.id), method: :post, class: 'delete-btn'  %>
+          <% else %>
+            <%= button_to "Make Public", user_recipe_update_public_path(id: @recipe.id), method: :post, class: 'delete-btn'  %>
+          <% end %>
         <div>
           <%= form_with model: @recipefood, url: add_food_recipe_path(user_id: @user.id, id: @recipe.id), method: :post, class: 'create_new_food_recipe' do |form| %> 
             <%= form.select(:food_id, Food.where("user_id = #{@user.id}").collect {|p| [ p.name, p.id ] }, { include_blank: true }) %> 
