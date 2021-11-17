@@ -2,6 +2,8 @@
 @import './modules/buttons.scss';
 @import './fonts.scss';
 
+// ---------------FOODS/NEW ------------------
+
 .window_main_container {
     @include centerHor(200px);
     @include basicFrame(1px);
@@ -28,4 +30,61 @@
     @include simpleBtn(30px);
     @include centerHor(120px);
     margin-bottom: 10px;
+}
+
+// ---------------FOODS/SHOP ------------------
+
+.shopping-cart-container {
+    display: grid;
+    @include centerHor(360px);
+    grid-template-columns: 120px 120px 120px;
+    grid-template-rows: 50px auto;
+    @include basicFrame(1px);
+    padding-bottom: 20px;
+}
+.first-line {
+  @include customFont(Lato3, 25px);
+  list-style: none;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  padding-bottom: 10px;
+  border-bottom-color: rgba(0,0,0, 0.6);
+  text-align: center;
+}
+.next-line {
+    list-style: none;
+    @include customFont(Lato3, 15px);
+    text-align: center;
+    margin-top: 5px;
+}
+
+// ----------- FOODS/SHOW ---------------------------
+
+.food-show-container {
+    display: grid;
+    @include centerHor(790px);
+    grid-template-columns: 180px 250px 180px 180pX;
+    grid-template-rows: 100px auto;
+    @include basicFrame(1px);
+    padding-bottom: 20px;
+}
+.add_food_btn {
+    text-decoration: none;
+    margin-left: 1000px;
+    height: 120px;
+    border-style: solid;
+    border-color: rgb(43, 89, 150);
+    border-width: 1px;
+    background: rgb(43, 89, 150);
+    color: white;
+    border-radius: 3px;
+    transition: ease-in-out 0.2s;
+    padding: 10px;
+    &:hover {
+      transform: scale(1.2)
+    }
+}
+.next-line-btn {
+    @include simpleBtn(20px);
+    @include centerHor(100px);
 }

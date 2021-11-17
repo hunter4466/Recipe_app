@@ -1,17 +1,20 @@
 <div>
   <div>
-    <h1>PUBLIC RECIPES:</h1>
-    <div>
+    <h1 class="recipes_public_title">PUBLIC RECIPES:</h1>
+    <div class="recipes_public_container">
     <% @recipes.each do |recipe|%>
+    <div class="single_recipe_public_container">
       <% if recipe.public %>
-        <%= link_to recipe.name, user_recipe_details_path(user_id: recipe.user_id, id: recipe.id), class: 'link-to-recipe-detail' %>
-        <h2>by <%= User.find(recipe.user_id).name %></h2>
-        <p>Total food items:<%= RecipeFood.where("recipe_id = #{recipe.id}").count %></p>
-        <p>Total price:</p>
-        <%= RecipeFood.where("recipe_id = #{recipe.id}").joins(:food).sum("quantity * price") %>
-        <p><%= recipe.description %></p>
-        <%= button_to "Remove", user_destroy_recipe_path(id: recipe.id), method: :delete, class: 'delete-btn'  %>
+        <div>
+          <%= link_to recipe.name, user_recipe_details_path(user_id: recipe.user_id, id: recipe.id), class: 'link-to-recipe-detail' %>
+          <h2 class='link-to-recipe-user-name'>by <%= User.find(recipe.user_id).name %></h2>
+        </div>
+        <div>
+          <p class="recipe_public_detail">Total food items: <%= RecipeFood.where("recipe_id = #{recipe.id}").count %></p>
+          <p class="recipe_public_detail">Total price: $ <%= RecipeFood.where("recipe_id = #{recipe.id}").joins(:food).sum("quantity * price") %></p>
+        </div>
       <% end %>
+    </div>
     <% end %>
     </div>
   </div>

@@ -53,4 +53,7 @@
     font-size: $fontsize;
     color: rgba(0, 0, 0, 0.6);
   }
-  
+  @mixin customFontBtn ($font, $fontsize) {
+    font-family: $font, serif;
+    font-size: $fontsize;
+  }

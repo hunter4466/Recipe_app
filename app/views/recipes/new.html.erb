@@ -1,14 +1,14 @@
-<section class="post_new_main_container">
-  <%= form_with model: @recipe, url: user_create_recipe_path(user_id: @user), method: :post, class: 'post_new_form' do |form| %>
-    <h2 class="post_new_add_post_indicator">Add recipe: </h2>
-      <%= form.label :name, class: 'post_new_title_label' %>
-      <%= form.text_field :name, :required => true, class: 'post_new_title_input' %>
-      <%= form.label :preparation_time, class: 'post_new_title_label' %>
-      <%= form.text_field :preparation_time, :required => true, class: 'post_new_title_input' %>
-      <%= form.label :cooking_time , class: 'post_new_title_label' %>
-      <%= form.text_field :cooking_time, :required => true, class: 'post_new_title_input' %>
-      <%= form.label :description , class: 'post_new_title_label' %>
-      <%= form.text_field :description, :required => true, class: 'post_new_title_input' %>
-      <%= form.submit "Add recipe", class: 'post_new_submit_btn' %>
+<section class="recipe_new_main_container">
+  <%= form_with model: @recipe, url: user_create_recipe_path(user_id: @user), method: :post, class: 'recipe_new_form' do |form| %>
+    <h2 class="recipe_new_add_recipe_indicator">Add recipe: </h2>
+      <%= form.label :name, class: 'recipe_new_title_label' %>
+      <%= form.text_field :name, :required => true, class: 'recipe_new_title_input' %>
+      <%= form.label :preparation_time, class: 'recipe_new_title_label' %>
+      <%= form.text_field :preparation_time, :required => true, class: 'recipe_new_title_input' %>
+      <%= form.label :cooking_time , class: 'recipe_new_title_label' %>
+      <%= form.text_field :cooking_time, :required => true, class: 'recipe_new_title_input' %>
+      <%= form.label :description , class: 'recipe_new_title_label' %>
+      <%= form.text_field :description, :required => true, class: 'recipe_new_title_input' %>
+      <%= form.submit "Add recipe", class: 'recipe_new_submit_btn' %>
   <% end %>
 </section>
