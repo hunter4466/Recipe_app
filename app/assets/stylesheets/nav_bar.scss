@@ -1,0 +1,41 @@
+@import './modules/frames.scss';
+@import './modules/buttons.scss';
+@import './fonts.scss';
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+    user-select: none;
+}
+
+.navigation-bar {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(211, 211, 211, 0.467);
+  height: 50px;
+  padding-top: 5px;
+}
+
+.food_app_title {
+    text-decoration: none;
+    @include customFont(Lato1, 30px);
+    transition: ease-in-out 0.2s;
+    margin-left: 5rem;
+    margin-top: 2px;
+    color: rgba(0, 0, 0, 0.645) !important;
+}
+
+.navigation-btn {
+    text-decoration: none;
+    @include customFont(Lato1, 20px);
+    transition: ease-in-out 0.2s;
+    margin-left: 5rem;
+    margin-top: 10px;
+    color: rgba(0, 0, 0, 0.645) !important;
+    
+    &:hover {
+        transform: scale(1.3)
+    }
+}

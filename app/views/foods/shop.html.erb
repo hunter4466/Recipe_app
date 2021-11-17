@@ -1,0 +1,12 @@
+<ul class="shopping-cart-container">
+    <li class="first-line">Food</li>
+    <li class="first-line">Quantity</li>
+    <li class="first-line">Price</li>
+<% @foods.each do |food|%>
+<% if RecipeFood.where("food_id = #{food.id}").joins(:food).sum("quantity*price") > 0 %>
+        <li class="next-line"><%= food.name %></li>
+        <li class="next-line"><%=RecipeFood.where("food_id = #{food.id}").joins(:food).sum("quantity") %> <%= food.measurement_unit %></li>
+        <li class="next-line">$ <%=RecipeFood.where("food_id = #{food.id}").joins(:food).sum("quantity*price") %></li>
+  <% end %>
+<% end %>
+</ul>

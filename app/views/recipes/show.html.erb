@@ -1,0 +1,17 @@
+<div>
+<h1 class="recipes_public_title">RECIPES:</h1>
+  <div class="recipes_public_container">
+    <% @recipes.each do |recipe|%>  
+      <% if recipe.user_id == @user %>
+      <div class="single_recipe_public_container">
+        <div>
+          <%= link_to recipe.name, user_recipe_details_path(user_id: @user, id: recipe.id), class: 'link-to-recipe-detail' %>
+          <%= button_to "Remove", user_destroy_recipe_path(id: recipe.id), method: :delete, class: 'link-to-recipe-user-name'  %>
+        </div>
+        <p class="recipe_public_detail"><%= recipe.description %></p>
+        </div>
+      <% end %>
+    <% end %>
+    <%= button_to "Add Recipe", recipes_new_path(), method: :get, class: 'recipe_new_submit_btn' %>
+  </div>
+</div>

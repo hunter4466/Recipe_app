@@ -1,0 +1,21 @@
+@mixin flexbox ($direction){
+display: flex;
+flex-direction: $direction;
+}
+
+@mixin centerHor ($width) {
+    position: relative;
+    width: $width;
+    margin-left: -($width/2);
+    left: 50%;
+    align-items: center;
+}
+
+@mixin basicFrame ($width) {
+    border-style: solid;
+    border-radius: 5px;
+    border-width: $width;
+    border-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.05);
+}
