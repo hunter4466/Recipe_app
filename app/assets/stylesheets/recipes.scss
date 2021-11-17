@@ -77,7 +77,9 @@
 .recipe_new_main_container {
     @include centerHor(300px);
     @include basicFrame(1px);
+    @include flexbox(column)
 }
+
 .recipe_new_form {
     @include flexbox(column);
 }
