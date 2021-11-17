@@ -20,7 +20,7 @@ class FoodsController < ApplicationController
     @food.price = params[:food][:price]
     @food.user_id = params[:user_id]
     if @food.save
-      redirect_to foods_show_url()
+      redirect_to foods_show_url
     else
       flash.now[:error] = 'To-do item update failed'
       render :new
@@ -35,6 +35,6 @@ class FoodsController < ApplicationController
     else
       flash[:error] = 'Food not deleted'
     end
-    redirect_to foods_show_url()
+    redirect_to foods_show_url
   end
 end

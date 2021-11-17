@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-
   def show
     @user = current_user.id
     @recipes = Recipe.all
@@ -16,18 +15,17 @@ class RecipesController < ApplicationController
       format.json { render json: @comments }
     end
   end
-  
+
   def addrecipefood
     @recipefood = RecipeFood.new
     @recipefood.quantity = params[:recipe_food][:quantity]
     @recipefood.food_id = params[:recipe_food][:food_id]
     @recipefood.recipe_id = params[:id]
     if @recipefood.save
-      redirect_to user_recipe_details_url(user_id: params[:user_id], id: params[:id])
     else
       flash.now[:error] = 'Ingredient could not be added'
-      redirect_to user_recipe_details_url(user_id: params[:user_id], id: params[:id])
     end
+    redirect_to user_recipe_details_url(user_id: params[:user_id], id: params[:id])
   end
 
   def new
@@ -44,7 +42,7 @@ class RecipesController < ApplicationController
     @recipe.user_id = params[:user_id]
     @recipe.public = false
     if @recipe.save
-      redirect_to recipes_show_url()
+      redirect_to recipes_show_url
     else
       flash.now[:error] = 'To-do item update failed'
       render :new
@@ -62,11 +60,11 @@ class RecipesController < ApplicationController
 
   def recipepublic
     @recipe = Recipe.find(params[:id])
-    if @recipe.public
-      @recipe.public = false
-    else
-      @recipe.public = true
-    end
+    @recipe.public = if @recipe.public
+                       false
+                     else
+                       true
+                     end
     if @recipe.save
       # Post.update_post_counter(User.find(current_user.id))
       flash[:notice] = 'Success'
@@ -89,6 +87,6 @@ class RecipesController < ApplicationController
     else
       flash[:error] = 'Recipe not deleted'
     end
-    redirect_to recipes_show_url()
+    redirect_to recipes_show_url
   end
 end
