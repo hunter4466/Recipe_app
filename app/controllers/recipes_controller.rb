@@ -60,13 +60,34 @@ class RecipesController < ApplicationController
     # @comments = Comment.includes(:author).order(created_at: :desc)
   end
 
+  def recipepublic
+    @recipe = Recipe.find(params[:id])
+    if @recipe.public
+      @recipe.public = false
+    else
+      @recipe.public = true
+    end
+    if @recipe.save
+      # Post.update_post_counter(User.find(current_user.id))
+      flash[:notice] = 'Success'
+    else
+      flash[:error] = 'Error'
+    end
+    redirect_to user_recipe_details_url(user_id: current_user.id, id: params[:id])
+  end
+
+  def recipeprivate
+    @recipe = Recipe.find(params[:id])
+    @recipe.public = false
+  end
+
   def destroy
     @recipe = Recipe.find(params[:id])
     if @recipe.destroy
       # Post.update_post_counter(User.find(current_user.id))
-      flash[:notice] = 'Post deleted succesfully'
+      flash[:notice] = 'Recipe deleted succesfully'
     else
-      flash[:error] = 'Post not deleted'
+      flash[:error] = 'Recipe not deleted'
     end
     redirect_to recipes_show_url()
   end

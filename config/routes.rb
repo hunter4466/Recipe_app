@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'recipes/show', to:  "recipes#show", as: "recipes_show"
   get "/users/:user_id/recipes/:id", to: "recipes#details", as: "user_recipe_details"
   get 'recipes/public', to:  "recipes#public", as: "recipes_public"
+  post "/recipes/:id/update/public", to: "recipes#recipepublic", as: "user_recipe_update_public"
   post 'recipes/:user_id/food/new/:id', to: "recipes#addrecipefood", as: "add_food_recipe"
   post "/users/:user_id/food", to: "foods#create", as: "user_create_food"
   post "/users/:user_id/recipe", to: "recipes#create", as: "user_create_recipe"
