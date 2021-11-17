@@ -9,15 +9,31 @@
         <p><%= @recipe.description %></p>
         <p>ID: <%= @recipe.id %> DELETE THIS</p>
         <p>Public: <%= @recipe.public %></p>
-        <%= button_to "Remove", user_destroy_recipe_path(id: @recipe.id), method: :delete, class: 'delete-btn'  %>
+        <% if current_user.id == @recipe.user_id %>
+        <div>
+          <%= form_with model: @recipefood, url: add_food_recipe_path(user_id: @user.id, id: @recipe.id), method: :post, class: 'create_new_food_recipe' do |form| %> 
+            <%= form.select(:food_id, Food.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }) %> 
+            <%= form.label :quantity, class: 'post_new_title_label' %>
+            <%= form.number_field :quantity, in: 1.0..20.0, step: 1, :required => true, class: 'price_input'  %>
+            <%= form.submit "Add Ingredient", class: 'post_new_submit_btn' %>
+          <% end %>
+        </div>
+        <div>
+            <%= button_to "Add ingredient", user_destroy_recipe_path(id: @recipe.id), method: :delete, class: 'delete-btn'  %>
+        </div>
+        <% end %>
+        <ul>
         <% @recipe_foods.each do |recipe_food|%>
           <li>
             <h2><%= recipe_food.food.name %></h2>
             <h2><%= recipe_food.food.measurement_unit %></h2>
             <h2><%= recipe_food.food.price %></h2>
+            <% if current_user.id == @recipe.user_id %>
             <%= button_to "Remove", user_destroy_food_path(id: recipe_food.id), method: :delete, class: 'delete-btn'  %>
+            <% end %>
           </li>
-      <% end %>
+        <% end %>
+        </ul>
     </div>
   </div>
 </div>

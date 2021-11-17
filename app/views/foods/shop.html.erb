@@ -6,10 +6,12 @@
     <h1>Price</h1>
   </li>
 <% @foods.each do |food|%>
-  <li>
-    <h1><%= food.name %></h1>
-    <h1><%=RecipeFood.where("food_id = #{food.id}").joins(:food).sum("quantity") %></h1>
-    <h1><%=RecipeFood.where("food_id = #{food.id}").joins(:food).sum("quantity*price") %></h1>
-  </li>
+<% if RecipeFood.where("food_id = #{food.id}").joins(:food).sum("quantity*price") > 0 %>
+    <li>
+        <h1><%= food.name %></h1>
+        <h1><%=RecipeFood.where("food_id = #{food.id}").joins(:food).sum("quantity") %></h1>
+        <h1><%=RecipeFood.where("food_id = #{food.id}").joins(:food).sum("quantity*price") %></h1>
+    </li>
+  <% end %>
 <% end %>
 </ul>

@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
   end
 
   def details
+    @recipefood = RecipeFood.new
     @user = User.find(params[:user_id])
     @foods = Food.where("user_id = #{params[:user_id]}")
     @recipe_foods = RecipeFood.where("recipe_id = #{params[:id]}")
@@ -13,6 +14,19 @@ class RecipesController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render json: @comments }
+    end
+  end
+  
+  def addrecipefood
+    @recipefood = RecipeFood.new
+    @recipefood.quantity = params[:recipe_food][:quantity]
+    @recipefood.food_id = params[:recipe_food][:food_id]
+    @recipefood.recipe_id = params[:id]
+    if @recipefood.save
+      redirect_to user_recipe_details_url(user_id: params[:user_id], id: params[:id])
+    else
+      flash.now[:error] = 'Ingredient could not be added'
+      redirect_to user_recipe_details_url(user_id: params[:user_id], id: params[:id])
     end
   end
 

@@ -4,7 +4,7 @@
     <div>
     <% @recipes.each do |recipe|%>
       <% if recipe.public %>
-        <h2><%= recipe.name %></h2>
+        <%= link_to recipe.name, user_recipe_details_path(user_id: recipe.user_id, id: recipe.id), class: 'link-to-recipe-detail' %>
         <h2>by <%= User.find(recipe.user_id).name %></h2>
         <p>Total food items:<%= RecipeFood.where("recipe_id = #{recipe.id}").count %></p>
         <p>Total price:</p>
