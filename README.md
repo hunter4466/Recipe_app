@@ -4,13 +4,13 @@ In this project we developed a Recipe App that allows people to create recipes, 
 
 ## Screenshots
 
-![image](./app/assets/images/Screenshots/Capture.png)
-![image](./app/assets/images/Screenshots/Capture2.png)
-![image](./app/assets/images/Screenshots/Capture3.png)
-![image](./app/assets/images/Screenshots/Capture4.png)
-![image](./app/assets/images/Screenshots/Capture5.png)
-![image](./app/assets/images/Screenshots/Capture6.png)
-![image](./app/assets/images/Screenshots/Capture7.png)
+![image](./app/assets/images/Screenshots/Capture.PNG)
+![image](./app/assets/images/Screenshots/Capture2.PNG)
+![image](./app/assets/images/Screenshots/Capture3.PNG)
+![image](./app/assets/images/Screenshots/Capture4.PNG)
+![image](./app/assets/images/Screenshots/Capture5.PNG)
+![image](./app/assets/images/Screenshots/Capture6.PNG)
+![image](./app/assets/images/Screenshots/Capture7.PNG)
 
 ## Built With
 
@@ -40,13 +40,19 @@ In this project we developed a Recipe App that allows people to create recipes, 
    npm install
    ```
 
-3. Run the web server
+3. Set up database
+
+   ```sh
+   rails db:create db:migrate db:seed
+   ```
+
+4. Run the web server
 
    ```sh
    rails server
    ```
 
-4. Access to the website in a browser with the following link
+5. Access to the website in a browser with the following link
 
    ```sh
    localhost:3000
