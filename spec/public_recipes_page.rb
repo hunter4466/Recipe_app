@@ -13,98 +13,63 @@ RSpec.describe 'in user recipes index page', js: true, type: :system do
   end
 
   describe 'I can see' do
-    it 'the description for each recipe' do
+    it 'the recipe in public recipes after making it public' do
       visit new_user_session_path
       fill_in 'email', with: 'user1@mail.com'
       fill_in 'password', with: '111111'
       click_button 'Log in'
       recipe = Recipe.find_by(name: 'Sandwich')
       click_link recipe.name
-      expect(page).to have_content(recipe.description)
-    end
-
-    it 'the recipe\'s name' do
-      visit new_user_session_path
-      fill_in 'email', with: 'user1@mail.com'
-      fill_in 'password', with: '111111'
-      click_button 'Log in'
-      recipe = Recipe.find_by(name: 'Sandwich')
-      click_link recipe.name
+      click_button 'Make public'
+      click_link 'Public Recipes'
       expect(page).to have_content(recipe.name)
     end
 
-    it 'the recipe\'s preparation time' do
+    it 'the recipe\'s name in public recipes after making it public' do
       visit new_user_session_path
       fill_in 'email', with: 'user1@mail.com'
       fill_in 'password', with: '111111'
       click_button 'Log in'
       recipe = Recipe.find_by(name: 'Sandwich')
       click_link recipe.name
-      expect(page).to have_content(recipe.preparation_time)
+      click_button 'Make public'
+      click_link 'Public Recipes'
+      expect(page).to have_content(recipe.name)
     end
 
-    it 'the recipe\'s cooking time' do
+    it 'the recipe\'s user name in public recipes after making it public' do
       visit new_user_session_path
       fill_in 'email', with: 'user1@mail.com'
       fill_in 'password', with: '111111'
       click_button 'Log in'
       recipe = Recipe.find_by(name: 'Sandwich')
-      click_link recipe.name
-      expect(page).to have_content(recipe.cooking_time)
-    end
-
-    it 'the Generate shopping list button' do
-      visit new_user_session_path
-      fill_in 'email', with: 'user1@mail.com'
-      fill_in 'password', with: '111111'
-      click_button 'Log in'
-      recipe = Recipe.find_by(name: 'Sandwich')
-      click_link recipe.name
-      expect(page).to have_content("Generate shopping list")
-    end
-
-    it 'the recipe\'s food list' do
-      visit new_user_session_path
-      fill_in 'email', with: 'user1@mail.com'
-      fill_in 'password', with: '111111'
-      click_button 'Log in'
-      recipe = Recipe.find_by(name: 'Sandwich')
-      click_link recipe.name
-      expect(page).to have_content("Ham")
-    end
-
-    it 'the Make public button' do
-      visit new_user_session_path
-      fill_in 'email', with: 'user1@mail.com'
-      fill_in 'password', with: '111111'
-      click_button 'Log in'
-      recipe = Recipe.find_by(name: 'Sandwich')
-      click_link recipe.name
-      expect(page).to have_content("Make public")
-    end
-
-    it 'the Remove button' do
-      visit new_user_session_path
-      fill_in 'email', with: 'user1@mail.com'
-      fill_in 'password', with: '111111'
-      click_button 'Log in'
-      recipe = Recipe.find_by(name: 'Sandwich')
-      click_link recipe.name
-      expect(page).to have_content("Remove")
-    end
-  end
-
-  describe 'when I click' do
-    it 'on Generate shopping list, it redirects me to shopping list page' do
-      visit new_user_session_path
-      fill_in 'email', with: 'user1@mail.com'
-      fill_in 'password', with: '111111'
-      click_button 'Log in'
       user = User.find_by(name: 'Foo')
+      click_link recipe.name
+      click_button 'Make public'
+      click_link 'Public Recipes'
+      expect(page).to have_content(user.name)
+    end
+
+    it 'the recipe\'s Total food items in public recipes after making it public' do
+      visit new_user_session_path
+      fill_in 'email', with: 'user1@mail.com'
+      fill_in 'password', with: '111111'
+      click_button 'Log in'
       recipe = Recipe.find_by(name: 'Sandwich')
       click_link recipe.name
-      click_button "Generate shopping list"
-      expect(current_path).to eql(foods_shop_path())
+      click_button 'Make public'
+      click_link 'Public Recipes'
+      expect(page).to have_content('Total food items:')
+
+    it 'the recipe\'s Total price in public recipes after making it public' do
+      visit new_user_session_path
+      fill_in 'email', with: 'user1@mail.com'
+      fill_in 'password', with: '111111'
+      click_button 'Log in'
+      recipe = Recipe.find_by(name: 'Sandwich')
+      click_link recipe.name
+      click_button 'Make public'
+      click_link 'Public Recipes'
+      expect(page).to have_content('Total price:')
     end
-  end
 end
