@@ -1,13 +1,16 @@
-# Blog App
+# Recipe App
 
-In this project I'm developing a blog app that allows people to create users, posts, comments, and likes upon user actions.
+In this project we developed a Recipe App that allows people to create recipes, add food ingredients, generate a shopping list and make public recipies.
 
 ## Screenshots
 
-![image](./app/assets/images/Screenshots/sc1.png)
-![image](./app/assets/images/Screenshots/sc2.png)
-![image](./app/assets/images/Screenshots/sc3.png)
-![image](./app/assets/images/Screenshots/sc4.png)
+![image](./app/assets/images/Screenshots/Capture.png)
+![image](./app/assets/images/Screenshots/Capture2.png)
+![image](./app/assets/images/Screenshots/Capture3.png)
+![image](./app/assets/images/Screenshots/Capture4.png)
+![image](./app/assets/images/Screenshots/Capture5.png)
+![image](./app/assets/images/Screenshots/Capture6.png)
+![image](./app/assets/images/Screenshots/Capture7.png)
 
 ## Built With
 
@@ -20,15 +23,34 @@ In this project I'm developing a blog app that allows people to create users, po
 
 1. Clone the repo
 
-   git clone https://github.com/hunter4466/Blog_app.git
+   git clone https://github.com/hunter4466/Recipe_app.git
   
 
 ### Usage
 
-    ```sh
-    Execute "$ bundle install" command
-    ```
+1. Install ruby gems dependencies
 
+   ```sh
+   bundle install
+   ```
+
+2. Install node dependencies
+
+   ```sh
+   npm install
+   ```
+
+3. Run the web server
+
+   ```sh
+   rails server
+   ```
+
+4. Access to the website in a browser with the following link
+
+   ```sh
+   localhost:3000
+   ``
 ### Test
 
 For testing the classes run:
@@ -44,12 +66,18 @@ For testing the classes run:
 - GitHub: [@githubhandle](https://github.com/hunter4466/)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/mario-chois-5a13b6b6/)
 - Angelist: [@angelist](https://angel.co/u/mario-chois)
+
+👤 **Sebastián Muñoz**
+
+- GitHub: [@smunozmo](https://github.com/smunozmo)
+- Twitter: [@smunozmo](https://twitter.com/smunozmo)
+- Linkedin: [Sebastián Muñoz](https://www.linkedin.com/in/smunozmo/)
  
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/hunter4466/Blog_app/issues).
+Feel free to check the [issues page](https://github.com/hunter4466/Recipe_app/issues).
 
 ## Show your support
 
